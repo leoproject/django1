@@ -10,7 +10,7 @@ class Product(models.Model):
 
 class Client(models.Model):
     name = models.CharField('Name', max_length=100)
-    last_name = models.CharField('Name', max_length=100)
+    last_name = models.CharField('Last Name', max_length=100)
     email = models.EmailField('E-mail', max_length=100)
 
     def __str__(self):
