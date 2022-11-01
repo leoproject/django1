@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django 1 - Index</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+<center>
+<h1>Welcome to my first App in DJango </h1>
+<img src="{% static 'images/django.png' %}"/>
+<h2>{{ curso }}</h2>
+<h3>{{ other }}</h3>
+<h1>Result of test {{ test }}</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Product</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for product in products %}
+    <tr>
+        <td><a href="{% url 'product' product.id %}">{{ product.name }}</a> </td>
+        <td>{{ product.price }}</td>
+    </tr>
+{% endfor %}
+
+    </tbody>
+</table>
+
+<button onclick="test();">Click me</button>
+<script type="text/javascript" src="{% static 'js/script.js'%}"></script>
+</center>
+</body>
+</html>
